@@ -35,3 +35,5 @@ app.all("*",(req,res,next) => {
     err.statusCode = 404
     next(err)
 })
+
+app.use(ErrorMiddleware)
