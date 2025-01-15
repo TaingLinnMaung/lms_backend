@@ -3,6 +3,7 @@ import dotEnv from "dotenv"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 import {ErrorMiddleware} from "./middleware/error.js"
+import userRouter from "./routes/user.route.js"
 
 export const app = express()
 
@@ -21,6 +22,8 @@ app.use(cookieParser())
 
 app.use(cors())
 
+
+app.use("/api",userRouter)
 
 //api
 app.get("/api/test",(req,res,next) => {
